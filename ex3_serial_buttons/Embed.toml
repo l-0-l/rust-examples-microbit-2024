@@ -1,0 +1,42 @@
+# Embedded development configuration for the project
+
+# Default probe configuration
+[default.probe]
+# Specify the protocol to be used by the probe (Serial Wire Debug)
+protocol = "Swd"
+# You can also specify other protocols such as JTAG
+# protocol = "Jtag"
+
+# General settings for the target chip
+[default.general]
+# Specify the target chip model
+chip = "nrf51822_xxAA"
+# You can specify other chip models as needed, e.g., "nrf52840_xxAA"
+
+# Reset configuration
+[default.reset]
+# Specify whether to halt the CPU after reset
+halt_afterwards = false
+# Optionally, you can specify if you want to connect under reset
+# connect_under_reset = true
+
+# Real-Time Transfer (RTT) interface configuration
+[default.rtt]
+# Enable the RTT interface
+enabled = false
+# Optionally, specify the address of the RTT control block
+# address = 0x20000000
+
+# GDB (GNU Debugger) configuration
+[default.gdb]
+# Disable the GDB interface
+enabled = false
+# Optionally, specify the GDB server port
+# port = 2331
+
+# Flashing configuration (used for flashing firmware to the chip)
+[default.flashing]
+# Enable flashing
+enabled = true
+# Optionally, specify the path to the flash algorithm
+# algorithm = "path/to/flash/algorithm"

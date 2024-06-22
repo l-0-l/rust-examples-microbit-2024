@@ -1,0 +1,13 @@
+# Configuration for building the project for ARM Cortex-M0 (thumbv6m-none-eabi)
+
+# Target-specific configuration for any ARM target without an OS
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+rustflags = [
+  # Specify the linker script to use for the build
+  "-C", "link-arg=-Tlink.x",
+]
+
+# General build configuration
+[build]
+# Set the default compilation target to ARM Cortex-M0
+target = "thumbv6m-none-eabi"
