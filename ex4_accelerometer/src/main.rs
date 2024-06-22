@@ -22,7 +22,8 @@ use microbit::{
 ///
 /// Initializes the RTT (Real-Time Transfer) for printing, sets up the UART for serial communication,
 /// and configures the I2C interface for the LSM303AGR accelerometer. It collects and displays the
-/// accelerometer data via both serial and RTT.
+/// accelerometer data via both serial and RTT. To see the output, make sure minicom is installed, and run:
+/// minicom -D /dev/ttyACM0 -b 1200 -8 -o
 #[entry]
 fn main() -> ! {
     rtt_init_print!();
