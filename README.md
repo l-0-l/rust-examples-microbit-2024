@@ -1,2 +1,2 @@
-# rust-examples-microbit-2024
-Examples for a 2024 meetup based on a micro:bit board
+# A few small examples for a 2024 Rust for embedded meetup to starting off with a micro:bit
+Here are 5 separate rust projects, going from nothing to a micro:bit accelerometer operated mouse.
