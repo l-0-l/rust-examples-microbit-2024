@@ -27,9 +27,9 @@ const MATRIX: [[[u8; 5]; 5]; 6] = [
 /// A new 5x5 matrix rotated 90 degrees clockwise.
 fn rotate_90(matrix: [[u8; 5]; 5]) -> [[u8; 5]; 5] {
     let mut rotated = [[0; 5]; 5];
-    for (i, row) in matrix.iter().enumerate() {
-        for (j, &val) in row.iter().enumerate() {
-            rotated[j][4 - i] = val;
+    for row in 0..5 {
+        for col in 0..5 {
+            rotated[col][4 - row] = matrix[row][col];
         }
     }
     rotated
