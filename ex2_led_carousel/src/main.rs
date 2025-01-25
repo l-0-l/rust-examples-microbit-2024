@@ -46,14 +46,20 @@ fn main() -> ! {
     let board = Board::take().unwrap();
     let mut timer = Timer::new(board.TIMER0);
     let mut display = Display::new(board.display_pins);
-    const DELAY: u32 = 25;
+    const DELAY_MS: u32 = 25;
+
+    // Precompute rotated matrices
+    let mut rotated_matrices = [[[0; 5]; 5]; MATRIX.len()];
+    for (i, matrix) in MATRIX.iter().enumerate() {
+        rotated_matrices[i] = rotate_90(*matrix);
+    }
 
     loop {
         for matrix in MATRIX.iter() {
-            display.show(&mut timer, *matrix, DELAY);
+            display.show(&mut timer, *matrix, DELAY_MS);
         }
-        for i in 0..MATRIX.len() {
-            display.show(&mut timer, rotate_90(MATRIX[i]), DELAY);
+        for matrix in rotated_matrices.iter() {
+            display.show(&mut timer, *matrix, DELAY_MS);
         }
     }
 }
